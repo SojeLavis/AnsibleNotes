@@ -299,6 +299,37 @@ A block has a start and an end, and it can contain any number of tasks, includin
 ### Ansible Blocks Example
 
 Here is an example of using a block to conditionally execute tasks:
+```yaml
+- name: Example playbook using blocks
+  hosts: localhost
+  tasks:
+    - name: Task 1
+      debug:
+        msg: "This is task 1"
+
+    - name: Task 2
+      debug:
+        msg: "This is task 2"
+
+    - block:
+      - name: Task 3
+        debug:
+          msg: "This is task 3"
+      
+      - name: Task 4
+        debug:
+          msg: "This is task 4"
+
+      rescue:
+        - name: Task 5
+          debug:
+            msg: "This is task 5"
+      
+      always:
+        - name: Task 6
+          debug:
+            msg: "This is task 6"
+```
 
 
 
