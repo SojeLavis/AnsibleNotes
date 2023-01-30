@@ -80,7 +80,7 @@ graph TD;
 
 Ansible playbooks are YAML files that define a set of instructions for Ansible to execute on specified hosts. A playbook contains one or more plays, each of which defines a set of tasks to be executed on a specific host group or individual host.
 
-## Components of a Playbook
+### Components of a Playbook
 
 1. **Name**: The name of the play.
 2. **Hosts**: The target hosts to run the play on. This can be a host group or an individual host defined in your inventory file.
@@ -89,30 +89,8 @@ Ansible playbooks are YAML files that define a set of instructions for Ansible t
 5. **Roles**: Roles define a set of tasks, files, and templates that can be used to execute specific actions. You can include one or more roles in your playbook.
 6. **Tasks**: Tasks define the actions to be executed on the target hosts. Each task is defined using an Ansible module and its arguments.
 
-## Example Playbook
 
-```yaml
----
-- name: Deploy Web Server
-  hosts: web-server
-  gather_facts: true
-  roles:
-    - web-server
-  tasks:
-  - name: Install Apache Web Server
-    yum:
-      name: httpd
-      state: present
-  - name: Start Apache Service
-    service:
-      name: httpd
-      state: started
-```
-
-
-
-
-## Playbook Arquitecture
+### Playbook Arquitecture
 ```mermaid
 graph TD; 
     Plays-->Name;
@@ -127,7 +105,7 @@ graph TD;
     Tasks-->Modules
     Tasks-->Handlers 
 ```
-### Example
+#### Example
 
 ```yaml
 ---
@@ -363,4 +341,17 @@ Ansible Collections are a distribution format for Ansible content. They allow pa
 Collections can be installed using the `ansible-galaxy` command, and content within collections can be used in playbooks just like any other Ansible content.
 
 
+## Ansible Plugins 
 
+Ansible plugins are extensions to the core functionality of Ansible that provide additional capabilities. There are several types of Ansible plugins, including:
+
+| Type | Description |
+|------|-------------|
+| Action plugins | Determine what action is taken when a task is executed |
+| Connection plugins | Manage the communication between Ansible and the managed hosts |
+| Lookup plugins | Retrieve data from external sources and make it available to the playbook |
+| Inventory plugins | Define the way Ansible retrieves information about the systems it manages |
+| Callback plugins | Control the output Ansible displays after tasks are executed |
+| Filter plugins | Modify data in an Ansible playbook and are used in Jinja2 templates |
+
+Ansible plugins are easy to write and can be used to add custom functionality or integrate with existing systems. They allow users to extend Ansible's capabilities and tailor it to their specific needs.
