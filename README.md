@@ -65,15 +65,24 @@ graph TD;
     Ansible-->Inventory;
     Ansible(Ansible)-->Playbook;
     Plays-->Hosts;
-    Playbook-->Plays;
-    Playbook-->Vars;
-    Ansible-->Plugins;
+    Playbook--->Plays;
+    Playbook-->vars;
+    Ansible-->Collections;
+    Collections-->Modules;
+    Collections-->Plugins;
+    Collections--->Roles;
+    
+    Roles-->Defaults;
+    Roles-->Files;
+    Roles-->Meta;
+    Roles-->Teplates;
+    Roles-->Vars;
     Plays-->Pre_Tasks
     Plays-->Tasks
     Plays-->Post_Tasks
-    Tasks-->Modules
     Tasks-->Handlers
 ```
+
 # Concepts
 
 ## About Playbooks
