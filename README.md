@@ -111,7 +111,6 @@ graph TD;
     Plays-->Pre_Tasks
     Plays-->Tasks
     Plays-->Post_Tasks
-    Tasks-->Modules
     Tasks-->Handlers 
 ```
 #### Example
