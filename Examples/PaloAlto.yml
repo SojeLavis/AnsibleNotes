@@ -1,0 +1,20 @@
+---
+- hosts: firewall
+  gather_facts: false
+  vars:
+    api_key: "YOUR_API_KEY"
+    api_username: "YOUR_USERNAME"
+    api_url: "https://{{ ansible_host }}/api"
+  tasks:
+  - name: Set the hostname
+    panos_set:
+      ip_address: "{{ ansible_host }}"
+      api_username: "{{ api_username }}"
+      api_key: "{{ api_key }}"
+      xpath: /config/devices/entry/deviceconfig/system
+      element: "<hostname>{{ inventory_hostname }}</hostname>"
+  - name: Commit the configuration
+    panos_commit:
+      ip_address: "{{ ansible_host }}"
+      api_username: "{{ api_username }}"
+      api_key: "{{ api_key }}"
