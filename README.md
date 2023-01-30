@@ -251,20 +251,34 @@ raleigh
 15. task vars (only for task vars)
 16. extra vars (Always win precedence)
 
-## Modules
-* Modules are a unit of work
-* They represent things such as 
-    * Creating files
-    * Creating Virtual machines
-    * Editing Firewall Rules
-    * Everything Else
-* Ansible has over 750 modules
-* Modules accept arguments as Key-Value pairs
+## Ansible Modules 
 
-    ### Modules run as Ad-Hoc commands
+Ansible modules play a crucial role in network automation by providing pre-written code for automating network-related tasks. Some of the most commonly used Ansible modules for network automation include:
+
+- `ios_command`: Executes commands on Cisco IOS devices.
+
+- `ios_facts`: Gathers facts from Cisco IOS devices.
+
+- `junos_command`: Executes commands on Juniper JUNOS devices.
+
+- `junos_facts`: Gathers facts from Juniper JUNOS devices.
+
+- `nxos_command`: Executes commands on Cisco NX-OS devices.
+
+- `nxos_facts`: Gathers facts from Cisco NX-OS devices.
+
+- `eos_command`: Executes commands on Arista EOS devices.
+
+- `eos_facts`: Gathers facts from Arista EOS devices.
+
+By using these modules, network administrators can automate repetitive tasks and easily manage their network infrastructure.
+
+#### Modules run as Ad-Hoc commands
+
     * Ansible lamp -m service -a "name=apache2 state=started"
     * Ansible lamp -m ping
     * Ansible all -m command -a "/sbin/reboot -t now"
+
 
 
 
