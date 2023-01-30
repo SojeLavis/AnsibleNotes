@@ -312,25 +312,26 @@ Here is an example of using a block to conditionally execute tasks:
         msg: "This is task 2"
 
     - block:
-      - name: Task 3
+      - name: Task 1 of Block 1
         debug:
-          msg: "This is task 3"
+          msg: "Executing block 1, Task 1"
       
-      - name: Task 4
+      - name: Task 2 of Block 1
         debug:
-          msg: "This is task 4"
+          msg: "Executing block 1, Task 2"
 
       rescue:
-        - name: Task 5
+        - name: Rescue 1
           debug:
-            msg: "This is task 5"
+            msg: "Executing Rescue 1"
       
       always:
-        - name: Task 6
+        - name: Always 1
           debug:
-            msg: "This is task 6"
+            msg: "Executing Always section"
+      when: //Condition
 ```
-
+In this example, tasks 1 and 2 will run normally. Then, tasks 3 and 4 will be run within the block when the condition is met. If any task within the block fails, then the rescue section will be executed (in this case, task 5). Finally, the always section will be executed no matter what (in this case, task 6).
 
 
 ## Ansible Collections
