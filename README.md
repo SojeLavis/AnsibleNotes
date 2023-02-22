@@ -1,14 +1,27 @@
 # Ansible
 
 
-## What is Ansible
-Ansible is defined as an open-source, cross-platform tool for resource provisioning automation that DevOps professionals popularly use for continuous delivery of software code by taking advantage of an “infrastructure as code” approach.
+## What is Ansible?
+Ansible an open-source automation tool written in Python.
 
+### What is it good for?
+* Provisioning
+* Configuration Management
+* Application Deployment
+* Server/Service Orchestration
+* Patch Management
+* Software Management
+* Security Scanning
+* Security Remediation
+* Disaster Recovery
+* Network Automation
+* Event Driven Automation
 #### Key points
 * Ansible does require Python on Linux hosts
 * Ansible does require Powershell 3 on Windows hosts
-* Ansible is an Open-source automation engine, written in python
-* Allows for streamlining a set of configuration tasks (group tasks into playbook) 
+* Ansible is an open source automation engine, written in python
+* Uses a declarative architecture facilitated by playbooks  
+* Allows for streamlining a set of tasks (group tasks into playbook) 
 * Allows for abstracting the underlying heterogeneous  environment – to a certain degree
 * Allows you to run to run commands on multiple server
 * Uses SSH to connect to devices
